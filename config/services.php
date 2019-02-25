@@ -19,6 +19,16 @@ use Symfony\Component\Console\Output\OutputInterface;
 use R2D2\DeathStarApi\Adapter\TranslatesBinarySpeakApiAdapter;
 use DroidSpeak\DroidSpeakTranslator;
 
+//Parameters:
+$container
+    ->setParameter(
+        'r2d2.certificates',
+        [
+            'cert' => __DIR__ . '/../resources/certificates/cert.pem',
+            'ssl_key' => __DIR__ . '/../resources/certificates/key.pem',
+        ]
+    );
+
 $container
     ->register(ClientInterface::class, Client::class)
     ->addArgument(['base_uri' => 'https://death-star-api.herokuapp.com']);
@@ -55,7 +65,8 @@ $container
 $container
     ->register(DeathStarApiConsumer::class, DeathStarApiConsumer::class)
     ->addArgument(new Reference(DeathStarApiAdapter::class))
-    ->addArgument(new Reference(TokenStorage::class));
+    ->addArgument(new Reference(TokenStorage::class))
+    ->addArgument('%r2d2.certificates%');
 
 $container
     ->register(R2D2ConsoleCommand::class, R2D2ConsoleCommand::class)

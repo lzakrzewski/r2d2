@@ -10,12 +10,19 @@ class DeathStarApiConsumer
     private $apiAdapter;
 
     /** @var TokenStorage */
-    private $tokenStorage;
+    private $authorizationToken;
 
-    public function __construct(DeathStarApiAdapter $apiAdapter, TokenStorage $tokenStorage)
-    {
-        $this->apiAdapter   = $apiAdapter;
-        $this->tokenStorage = $tokenStorage;
+    /** @var array */
+    private $certificates;
+
+    public function __construct(
+        DeathStarApiAdapter $apiAdapter,
+        TokenStorage $authorizationToken,
+        array $certificates
+    ) {
+        $this->apiAdapter         = $apiAdapter;
+        $this->authorizationToken = $authorizationToken;
+        $this->certificates       = $certificates;
     }
 
     public function createToken(string $clientId, string $clientSecret): void
@@ -24,6 +31,8 @@ class DeathStarApiConsumer
             'POST',
             '/Token',
             [
+                'cert'    => $this->certificates['cert'],
+                'ssl_key' => $this->certificates['ssl_key'],
                 'headers' => [
                     'content-type' => 'application/x-www-form-urlencoded',
                 ],
@@ -35,7 +44,7 @@ class DeathStarApiConsumer
             ]
         );
 
-        $this->tokenStorage->store($token['access_token']);
+        $this->authorizationToken->store($token['access_token']);
     }
 
     public function destroyReactor(int $exhaustId, int $numberOfTorpedoes): void
@@ -44,8 +53,10 @@ class DeathStarApiConsumer
             'DELETE',
             sprintf('/reactor/exhaust/%d', $exhaustId),
             [
+                'cert'    => $this->certificates['cert'],
+                'ssl_key' => $this->certificates['ssl_key'],
                 'headers' => [
-                    'authorization' => sprintf('Bearer %s', $this->tokenStorage->get()),
+                    'authorization' => sprintf('Bearer %s', $this->authorizationToken->get()),
                     'content-type'  => 'application/json',
                     'x-torpedoes'   => (string) $numberOfTorpedoes,
                 ],
@@ -59,8 +70,10 @@ class DeathStarApiConsumer
             'GET',
             sprintf('/prisoner/%s', $prisonerId),
             [
+                'cert'    => $this->certificates['cert'],
+                'ssl_key' => $this->certificates['ssl_key'],
                 'headers' => [
-                    'authorization' => sprintf('Bearer %s', $this->tokenStorage->get()),
+                    'authorization' => sprintf('Bearer %s', $this->authorizationToken->get()),
                     'content-type'  => 'application/json',
                 ],
             ]
