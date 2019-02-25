@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+use R2D2\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$input = new ArgvInput();
+$application = new Application($input->getParameterOption(['--env', '-e'], 'dev', true));
+$application->run($input);
