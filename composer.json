@@ -7,9 +7,22 @@
             "email": "lucaszz111@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/lzakrzewski/death-star-contracts"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/lzakrzewski/droid-speak"
+        }
+    ],
     "require": {
         "php": ">=7.2",
         "ext-json": "*",
+        "lzakrzewski/death-star-contracts": "dev-master",
+        "lzakrzewski/droid-speak": "dev-master",
+        "guzzlehttp/guzzle": "~6.0",
         "psr/http-message": "^1.0",
         "symfony/config": "^4.2",
         "symfony/console": "~4.2",
