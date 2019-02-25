@@ -31,6 +31,17 @@ class HttpDeathStarApiAdapterTest extends TestCase
     }
 
     /** @test */
+    public function it_can_decode_empty_response(): void
+    {
+        $this->guzzleClient->request('DELETE', '/prisoner/leila', [])
+            ->willReturn(new Response(204, [], ''));
+
+        $response = $this->adapter->request('DELETE', '/prisoner/leila', []);
+
+        $this->assertEquals([], $response);
+    }
+
+    /** @test */
     public function it_fails_when_api_fails(): void
     {
         $this->expectException(DeathStarApiException::class);

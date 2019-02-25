@@ -33,7 +33,13 @@ class HttpDeathStarApiAdapter implements DeathStarApiAdapter
 
     private function decodeResponse(ResponseInterface $response): array
     {
-        $decodedResponse = json_decode($body = $response->getBody()->getContents(), true);
+        $body = $response->getBody()->getContents();
+
+        if (empty($body)) {
+            return [];
+        }
+
+        $decodedResponse = json_decode($body, true);
 
         if (null === $decodedResponse) {
             throw InvalidResponseBodyException::create($body);
