@@ -49,6 +49,10 @@
         "sort-packages": true
     },
     "scripts": {
+        "post-install-cmd": [
+            "@generate-certificates"
+        ],
+        "generate-certificates": "openssl req -x509 -newkey rsa:4096  -subj '/CN=www.mydom.com/O=My Company Name LTD./C=US' -keyout resources/certificates/key.pem -out resources/certificates/cert.pem -days 10000 -nodes",
         "cs-fixer": "bin/php-cs-fixer fix --config=\"php_cs.dist\"",
         "cs-fixer-ci": "bin/php-cs-fixer fix --config=\"php_cs.dist\"",
         "static-analysis": "bin/phpstan analyse -c phpstan.neon --level=4 src/ && bin/phpstan analyse -c phpstan.neon --level=1 tests/",
