@@ -58,4 +58,4 @@ Implementations:
 - [HttpDeathStarApiAdapter](src/R2D2/DeathStarApi/Adapter/HttpDeathStarApiAdapter.php) - It uses [guzzle](https://github.com/guzzle/guzzle) and it performs real HTTP calls. It isn't in use during testing,
 - [LoggableDeathStarApiAdapter](src/R2D2/DeathStarApi/Adapter/LoggableDeathStarApiAdapter.php) - It logs requests and responses,
 - [TranslatesBinarySpeakApiAdapter](src/R2D2/DeathStarApi/Adapter/TranslatesBinarySpeakApiAdapter.php) - It translates [droid-speak](https://github.com/lzakrzewski/droid-speak) to english,
-- [UsesContractsDeathStarApiAdapterStub](src/R2D2/DeathStarApi/Adapter/UsesContractsDeathStarApiAdapterStub.php) - **[TEST ENV ONLY]** - It checks if [DeathStarApiConsumer](src/R2D2/DeathStarApi/DeathStarApiConsumer.php) is matching expected [contract](https://github.com/lzakrzewski/death-star-contracts).
+- [UsesContractsDeathStarApiAdapterStub](src/R2D2/DeathStarApi/Adapter/UsesContractsDeathStarApiAdapterStub.php) - **[TEST ENV ONLY]** - It asserts that [DeathStarApiConsumer](src/R2D2/DeathStarApi/DeathStarApiConsumer.php) is matching the expected [contract](https://github.com/lzakrzewski/death-star-contracts).
