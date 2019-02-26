@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace tests\integration\R2D2\DeathStarApi;
+namespace tests\contract\R2D2\DeathStarApi;
 
 use PHPStan\Testing\TestCase;
 use R2D2\Application;
