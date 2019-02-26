@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ef0b68e44b878e0696138b30d129dc74",
+    "hash": "d69661b60df48d1b43e3977e6abff4ca",
     "content-hash": "bce795ead7721aa2cca644e6ea2f7948",
     "packages": [
         {
@@ -196,12 +196,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lzakrzewski/death-star-contracts.git",
-                "reference": "b068608eeb5745e96b2b1f4d6523ecb114cf8ef7"
+                "reference": "a58ac253d99cad4935ffb3009a360bc39bf14c84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lzakrzewski/death-star-contracts/zipball/b068608eeb5745e96b2b1f4d6523ecb114cf8ef7",
-                "reference": "b068608eeb5745e96b2b1f4d6523ecb114cf8ef7",
+                "url": "https://api.github.com/repos/lzakrzewski/death-star-contracts/zipball/a58ac253d99cad4935ffb3009a360bc39bf14c84",
+                "reference": "a58ac253d99cad4935ffb3009a360bc39bf14c84",
                 "shasum": ""
             },
             "require": {
@@ -259,7 +259,7 @@
                 "source": "https://github.com/lzakrzewski/death-star-contracts/tree/master",
                 "issues": "https://github.com/lzakrzewski/death-star-contracts/issues"
             },
-            "time": "2019-02-25 21:10:35"
+            "time": "2019-02-26 07:52:53"
         },
         {
             "name": "lzakrzewski/droid-speak",
@@ -267,12 +267,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lzakrzewski/droid-speak.git",
-                "reference": "2190d16628ec8ce4937c3549ea3909f9a70c6851"
+                "reference": "f46a6607602d8e58d48aff3d68390f2997a2ab72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lzakrzewski/droid-speak/zipball/2190d16628ec8ce4937c3549ea3909f9a70c6851",
-                "reference": "2190d16628ec8ce4937c3549ea3909f9a70c6851",
+                "url": "https://api.github.com/repos/lzakrzewski/droid-speak/zipball/f46a6607602d8e58d48aff3d68390f2997a2ab72",
+                "reference": "f46a6607602d8e58d48aff3d68390f2997a2ab72",
                 "shasum": ""
             },
             "require": {
@@ -329,7 +329,7 @@
                 "source": "https://github.com/lzakrzewski/droid-speak/tree/master",
                 "issues": "https://github.com/lzakrzewski/droid-speak/issues"
             },
-            "time": "2019-02-25 21:58:22"
+            "time": "2019-02-26 07:52:54"
         },
         {
             "name": "psr/container",
